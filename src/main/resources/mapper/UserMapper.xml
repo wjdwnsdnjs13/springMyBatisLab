@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springMyBatisLab.mapper.UserMapper">
+
+    <select id="signIn" parameterType="com.springMyBatisLab.model.User" resultType="com.springMyBatisLab.model.User">
+        SELECT
+            boss_id
+        FROM
+            boss
+        WHERE
+            boss_id = #{bossId}
+            AND
+            password = #{password}
+    </select>
+
+    <select id="getUserById" parameterType="com.springMyBatisLab.model.User" resultType="com.springMyBatisLab.model.User">
+        SELECT
+            boss_id
+        FROM
+            boss
+        WHERE
+            boss_id = #{bossId}
+    </select>
+
+    <insert id="signUp" parameterType="com.springMyBatisLab.model.User">
+        INSERT INTO
+            boss
+            (boss_id, password, name, phone_number)
+        VALUES
+            (#{bossId}, #{password}, #{name}, #{phoneNumber})
+    </insert>
+
+</mapper>
