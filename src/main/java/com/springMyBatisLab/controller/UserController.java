@@ -30,6 +30,7 @@ public class UserController {
 
     @PostMapping("/signIn")
     public ResponseEntity<?> signIn(User user){
+        log.info("{}", user);
         if(user == null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         Integer result = userService.signIn(user);
         if(result.equals(1)) return ResponseEntity.status(HttpStatus.OK).build();

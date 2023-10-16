@@ -5,13 +5,11 @@
 
     <select id="signIn" parameterType="com.springMyBatisLab.model.User" resultType="com.springMyBatisLab.model.User">
         SELECT
-            boss_id
+            *
         FROM
             boss
         WHERE
             boss_id = #{bossId}
-            AND
-            password = #{password}
     </select>
 
     <select id="getUserById" parameterType="com.springMyBatisLab.model.User" resultType="com.springMyBatisLab.model.User">
